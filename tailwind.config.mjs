@@ -7,10 +7,25 @@ export default {
         DEFAULT: "0.5px",
       },
       width: {
-        def: "520px",
+        def: "555px",
+        ref: "350px",
       },
       height: {
-        def: "520px",
+        def: "555px",
+        ref: "350px",
+      },
+      fontFamily: {
+        FS: "FS",
+        SM: "SM",
+      },
+      fontSize: {
+        primary: "7rem",
+      },
+      letterSpacing: {
+        tight: "-0.5rem",
+      },
+      lineHeight: {
+        tight: "0.8",
       },
     },
   },
