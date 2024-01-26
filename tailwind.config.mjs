@@ -31,6 +31,9 @@ export default {
       colors: {
         yellow: "#fff000",
       },
+      divideWidth: {
+        0: "0.0005em",
+      },
     },
   },
   plugins: [],

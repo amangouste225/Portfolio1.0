@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import bg from "../content/images/bg.jpg"
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components'
+
 --- 
 
 <Layout title="Amangoua Ange | Creative Web Developer.">
 	<main>
-		<div class="max-w-8xl absolute h-full w-full mx-auto grid grid-cols-3 md:grid-cols-6 divide-x divide-slate-50/[.05]">
+		<div class="max-w-8xl absolute h-full w-full mx-auto grid grid-cols-3 md:grid-cols-6 divide-x-0 divide-white/[0.1]">
 				<div></div>
 				<div></div>
 				<div></div>
@@ -16,15 +18,50 @@ import { Image } from 'astro:assets';
 				<div class="absolute w-ref md:w-def md:h-def h-ref rounded-full  border -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-20"></div>
 		</div>
 		<div class="relative max-w-6xl w-full h-screen flex flex-col mx-auto justify-between items-center">
-			<div class="w-full text-xl text-white text-center ">Abidjan 16 : 06</div>
+			<div class="text-lg w-40 relative text-white text-center grid grid-cols-3 mt-5 items-center"> 
+			<span>Abidjan</span>
+			<span class="flex justify-center items-center"><Icon  name='star2' size={15}/></span>	
+			<span class="absolute right-0" id="clock"></span>	
+			</div>
 			<div class="w-full text-white text-center">
 				<h1 class="font-FS lg:text-primary tracking-tight leading-tight">Amangoua</h1>
 				<h1 class="font-FS lg:text-primary tracking-tight leading-tight">Ange</h1>
-				<div class="border-2 border-slate-100/[.05] inline-block px-20 py-2.5 rounded-full my-5">
-					creative coder | Designer
+				<div class="border-2 text-xl border-white/[.2] marquee inline-block px-10 py-2 rounded-full my-5">
+					<div class="marquee_inner">
+						<span>
+							<div class="orb">
+								<Icon name='star'/>
+							</div>
+							<div class="orb">
+								Creative Coder
+							</div>
+							<div class="orb">
+								<Icon name='star'/>
+							</div>
+							<div class="orb">
+								Creative Designer 
+							</div>
+							
+						</span> 
+						<span>
+							<div class="orb">
+								<Icon name='star'/>
+							</div>
+							<div class="orb">
+								Creative Coder
+							</div>
+							<div class="orb">
+								<Icon name='star'/>
+							</div>
+							<div class="orb">
+								Creative Designer 
+							</div>
+							
+						</span> 
+					</div>	
 				</div>
-				<p class="font-SM text-xl flex flex-col">
-					<span>Crafting digital interfaces</span>
+				<p class="font-SM font-thin text-xl flex flex-col">
+				<span><span class="italic mr-1">Crafting digital</span>  interfaces</span>
 					<span>Available for freelance projects</span>
 				</p>
 			</div>
@@ -35,13 +72,77 @@ import { Image } from 'astro:assets';
 	</main>
 </Layout>
 
-
-
 <style>	
+ [data-icon] {
+color: yellow;
+ }
+ [data-icon='star2'] {
+color: white;
+ }
 main{
 height: 100%;
 width: 100%;
-background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%);
+background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0,90%) 1%);
 position: relative;
-}	
+}
+
+.marquee {
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  width: 300px;
+  height:40px;
+  .marquee_inner{
+	display: block;
+	margin: 0 auto;
+	width:750px;
+	position: absolute;
+	transform: translate(0%,-50%);
+	top:50%;
+	animation: marquee 20s linear infinite;
+	span {
+	.orb {
+  		transition: all .2s ease-out;
+  		display: inline-flex;
+		align-items: flex-end;
+}
+  }
+  }
+  
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+.divide-x-0 > :not([hidden]) ~ :not([hidden]) {
+    border-right-width:none;
+    border-left-width: calc(0.0005em * calc(1 - 0));
+}
+
 </style>
+
+<script>
+function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+  let session = "AM";
+
+  if(hh > 12){
+      session = "PM";
+  }
+
+   hh = (hh < 10) ? "0" + hh : hh;
+   mm = (mm < 10) ? "0" + mm : mm;
+   ss = (ss < 10) ? "0" + ss : ss;
+    
+   let time = hh + ":" + mm + ":"+ ss  ;
+
+  document.getElementById("clock").innerText = time; 
+  let t = setTimeout(function(){ currentTime() }, 1000);
+}
+currentTime();
+	
+</script>

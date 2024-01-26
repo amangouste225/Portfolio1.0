@@ -2,21 +2,21 @@
 import Ico from "./Ico.astro"
 ---
 
-<div class="h-[370px] bg-black border-slate-50/[.15] border-y w-full flex flex-col items-center justify-center py-2">
+<div class="h-[370px] bg border-slate-50/[.15] border-y w-full flex flex-col items-center justify-center py-2">
     <div class="text-center  relative h-full">
       <h4 class="text-xl mt-5 text-yellow"> Get in touch</h4>
       <div class="grid grid-cols-4 justify-items-center gap-2 mt-2 mx-10">
-        <Ico name='icon' label='envelope' href='mailto:amangouakacouange@gmail.com'/>
-        <Ico name='icon' label='linkedin' href='https://www.linkedin.com/in/angethierry/'/>
-        <Ico name='icon' label='github' href='https://github.com/amangouste225'/>
-        <Ico name='icon' label='instagram' href='/'/>
+        <Ico icon='envelope' href='mailto:amangouakacouange@gmail.com'/>
+        <Ico icon='linkedin' href='https://www.linkedin.com/in/angethierry/'/>
+        <Ico icon='github' href='https://github.com/amangouste225'/>
+        <Ico icon='instagram' href='/'/>
       </div>
       <div class="text-white mt-10 bor w-full p-5">
         <p class="text-center">
          Amangoua Ange. Built in 2024 <br>
 Built with Astro JS, Tailwind CSS, and GSAP.
         </p>
-        <p class="opacity-50 font-thin mt-1 text-lg">Last updated Jan 2024</p>
+        <p class="opacity-50 font-thin mt-1 text-md">Last updated Jan 2024</p>
       </div>
     </div>
     <div class="bord w-full flex  h-14 absolute bottom-5">
@@ -87,6 +87,29 @@ Built with Astro JS, Tailwind CSS, and GSAP.
         transform: translate(-50%, -50%);
         right: 100%;
     }
+}
+.bg{
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 1) 0%, rgb(0, 0, 0,95%) 1%);
+}
+
+.bor {
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    opacity: .4;
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(0, 0, 0, 1) 99%
+    );
+    position: absolute;
+    transform: translate(-50%, 50%);
+    left: 50%;
+    top: -15%;
+  }
 }
 
 </style>

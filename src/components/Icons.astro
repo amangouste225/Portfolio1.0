@@ -1,12 +1,20 @@
 ---
 import { Icon } from 'astro-icon/components'
-const { title, label,href, info } = Astro.props;
+
+interface Props{
+    icon: string;
+    href?:string;
+    info: string
+}
+
+const { icon, href, info } = Astro.props;
+
 
 ---
 <a class="relative group" href={href}>
 <span class="absolute z-10 border border-slate-50/[0.1] ease-in duration-300 rounded-md px-2 opacity-0 text-sm font-thin left-1/2 top-0 translate-y-1/2 -translate-x-1/2 bg-slate-50/[0.1] group-hover:-translate-y-9 group-hover:opacity-100">{info}</span>
 <span class="relative ico z-50 flex justify-center m-1 items-center h-10  bg-slate-950/[1] border border-slate-50/[0.2] rounded-lg ease-in duration-200 group-hover:bg-slate-50/[0.1]">
-<Icon name={label} size={22} />
+<Icon name={icon} size={22} />
 </span>
 </a>
 
