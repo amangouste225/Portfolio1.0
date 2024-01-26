@@ -3,15 +3,14 @@ import { Icon } from 'astro-icon/components'
 interface Props{
     icon: string;
     href?:string;
-    title?: string
 }
 
-const {icon,href,title } = Astro.props;
+const {icon,href } = Astro.props;
 
 ---
 <a class="relative group" href={href} target="_blank">
 <span class="relative flex justify-center ease-in-out duration-200 items-center h-14 w-14 group-hover:bg-slate-50/[.15] rounded-md p-2">
-<Icon name={icon} title={icon} size={30}  />
+<Icon name={icon} size={30}  />
 </span>
 </a>
 
