@@ -1,5 +1,92 @@
 ---
-
+import Ico from "./Ico.astro"
 ---
 
-<div class="h-[400px] bg-black border-slate-50/[.15] border-y w-full"></div>
+<div class="h-[370px] bg-black border-slate-50/[.15] border-y w-full flex flex-col items-center justify-center py-2">
+    <div class="text-center  relative h-full">
+      <h4 class="text-xl mt-5 text-yellow"> Get in touch</h4>
+      <div class="grid grid-cols-4 justify-items-center gap-2 mt-2 mx-10">
+        <Ico name='icon' label='envelope' href='mailto:amangouakacouange@gmail.com'/>
+        <Ico name='icon' label='linkedin' href='https://www.linkedin.com/in/angethierry/'/>
+        <Ico name='icon' label='github' href='https://github.com/amangouste225'/>
+        <Ico name='icon' label='instagram' href='/'/>
+      </div>
+      <div class="text-white mt-10 bor w-full p-5">
+        <p class="text-center">
+         Amangoua Ange. Built in 2024 <br>
+Built with Astro JS, Tailwind CSS, and GSAP.
+        </p>
+        <p class="opacity-50 font-thin mt-1 text-lg">Last updated Jan 2024</p>
+      </div>
+    </div>
+    <div class="bord w-full flex  h-14 absolute bottom-5">
+        <div class="flex-1 ok"></div>
+        <div class="w-[300px] mx-3"></div>
+        <div class="flex-1 ko"></div>
+    </div>
+</div>
+
+<style>
+
+.ok{
+    position: relative;
+    &::before{
+        position: absolute;
+        content: "";
+        background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      rgb(0, 0, 0) 0%,
+      rgb(204, 176, 176) 100%
+    );
+        height: 0.5px;
+        width: 100%;
+         opacity: 0.5;
+         top: 50%;
+         transform: translate(-50%, 0%);
+         left: 50%;
+    }
+    &::after{
+        position: absolute;
+        content: "";
+        background: rgb(204, 176, 176);
+        height: 50%;
+        width: 1px;
+         opacity: 0.5;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         left: 100%;
+    }
+}    
+.ko{
+    position: relative;
+    &::before{
+        position: absolute;
+        content: "";
+        background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      rgb(204, 176, 176) 0%,
+      rgb(0, 0, 0) 100%
+    );
+        height: 0.5px;
+        width: 100%;
+         opacity: 0.5;
+         top: 50%;
+         transform: translate(-50%, 0%);
+         left: 50%;
+    }
+    &::after{
+        position: absolute;
+        content: "";
+        background: rgb(204, 176, 176);
+        height: 50%;
+        width: 0.5px;
+        opacity: 0.5;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        right: 100%;
+    }
+}
+
+</style>

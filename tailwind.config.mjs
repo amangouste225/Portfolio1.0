@@ -20,12 +20,16 @@ export default {
       },
       fontSize: {
         primary: "7.5rem",
+        sm: "14px",
       },
       letterSpacing: {
         tight: "-0.5rem",
       },
       lineHeight: {
         tight: "0.8",
+      },
+      colors: {
+        yellow: "#fff000",
       },
     },
   },
