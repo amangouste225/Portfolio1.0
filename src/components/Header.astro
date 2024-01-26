@@ -1,13 +1,13 @@
 ---
-
-const { title} = Astro.props
+import { Icon } from 'astro-icon/components'
+import Icons from './Icons.astro'
 
 ---
 
-<div class="fixed bottom-12 border-2 bg-black border-slate-50/[.15] -translate-x-1/2 translate-y-1/2 left-1/2 max-w-[350px] w-full p-4 rounded-3xl flex justify-between">
-<span class="text-white"> Home</span>
-<span class="text-white"> Home</span>
-<span class="text-white"> Home</span>
-<span class="text-white"> Home</span>
-<span class="text-white"> Home</span>
+<div class="fixed z-50 bottom-12 border-2 bg-black border-slate-50/[.15] -translate-x-1/2 translate-y-1/2 left-1/2 max-w-[270px] w-full rounded-2xl gap-2 grid grid-cols-5 text-white p-2 place-content-stretch">
+<Icons name='icon' label='home' />
+<Icons name='icon' label='info' />
+<Icons name='icon' label='work' />
+<Icons name='icon' label='game' />
+<Icons name='icon' label='sound' />
 </div>

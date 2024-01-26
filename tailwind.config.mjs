@@ -19,7 +19,7 @@ export default {
         SM: "SM",
       },
       fontSize: {
-        primary: "7rem",
+        primary: "7.5rem",
       },
       letterSpacing: {
         tight: "-0.5rem",

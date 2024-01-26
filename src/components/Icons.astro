@@ -1,0 +1,21 @@
+---
+import { Icon } from 'astro-icon/components'
+const { title, label } = Astro.props;
+
+---
+<span class="flex justify-center items-center border h-10 bg-slate-50/[.12]  border-slate-50/[.15] rounded-xl">
+<Icon name={label} size={20} />
+</span>
+
+
+
+<style>
+[data-icon] {
+color: white;
+ }
+
+ [data-icon='home']:hover {
+color: yellow;
+ }
+  
+</style>
