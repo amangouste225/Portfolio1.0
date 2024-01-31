@@ -1,11 +1,11 @@
 @font-face {
   font-family: "FS";
-  src: url("./FS.ttf");
+  src: url("FS.ttf");
 }
 
 @font-face {
   font-family: "SM";
-  src: url("./SplineSans-Light.ttf");
+  src: url("SplineSans-Light.ttf");
 }
 
 * {

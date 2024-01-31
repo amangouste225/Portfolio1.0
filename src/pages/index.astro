@@ -17,10 +17,10 @@ import { Icon } from 'astro-icon/components'
 				<div class="absolute w-ref md:w-def md:h-def h-ref rounded-full  border -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-20"></div>
 		</div>
 		<div class="relative max-w-6xl w-full h-screen flex flex-col mx-auto justify-between items-center">
-			<div class="text-lg w-40 relative text-white text-center grid grid-cols-3 mt-5 items-center"> 
-			<span>Abidjan</span>
+			<div class="text-md w-50 relative text-white text-center grid grid-cols-3 mt-5 items-center"> 
+			<span>Local time</span>
 			<span class="flex justify-center items-center"><Icon  name='star2' size={15}/></span>	
-			<span class="absolute right-0" id="clock"></span>	
+			<span class="absolute right-6" id="clock"></span>	
 			</div>
 			<div class="w-full text-white text-center">
 				<h1 class="font-FS lg:text-primary tracking-tight leading-tight">Amangoua</h1>
@@ -81,7 +81,7 @@ color: white;
 main{
 height: 100%;
 width: 100%;
-background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0,90%) 1%);
+background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0) 0%, rgb(0, 0, 0,80%) 1%);
 position: relative;
 }
 
@@ -96,8 +96,9 @@ position: relative;
 <script is:inline>
 function currentTime() {
   let date = new Date(); 
-  let hh = date.getHours();
-  let mm = date.getMinutes();
+  
+  let hh = date.getHours().toLocaleString();
+  let mm = date.getMinutes().toLocaleString();
   let ss = date.getSeconds();
   let session = "AM";
 
